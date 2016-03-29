@@ -1,0 +1,43 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>By using flight date , dep airport and arrive airport to search flight with average delay</h1>
+
+  <div>
+    {% for n in data %}
+    <div>flight Number: {{n[0]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Avg Delay Time: {{n[1]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+    {% endfor %}
+  </div>
+  
+
+
+
+
+<form method="POST" action="/search_flight_date">
+<p>Perform a new search:
+<br>flight date: <input type="date" name="flight_date">
+<br>departure airport: <input type="text" name="dep_airport">
+<br>arrive airport: <input type="text" name="arr_airport">
+<br><input type="submit" value="Submit"></p>
+</form>
+
+
+<p><a href="/back_to_main">Back to Main Menu: Click here</a></p>
+
+
+
+</body>
+
+
+
+
+</html>

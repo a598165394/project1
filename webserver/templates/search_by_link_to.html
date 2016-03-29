@@ -1,0 +1,53 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>All available flight info:</h1> 
+
+  <div>
+    {% for n in data %}
+    <div>Departure/Arrival: {{n[0]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Flight Number: {{n[1]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Flight Date: {{n[2]}}&nbsp;&nbsp;&nbsp;&nbsp;
+  Airport Code: {{n[3]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+    {% endfor %}
+  </div>
+
+
+
+
+
+
+<form method="POST" action="/add_link_to">
+<p>Add link_to relationship:
+<br>departure/arrival (Type departure or arrival only) : <input type="text" name="control">
+<br>Flight Number: <input type="text" name="flight_number">
+<br>Flight Date: <input type="date" name="flight_date">
+<br>Airport name: <input type="text" name="airport_id">
+<br><input type="submit" value="Submit"></p>
+</form>
+
+<form method="POST" action="/delete_link_to">
+<p>Which link_to do you want to delete?
+<br>departure/arrival (Type departure or arrival only) : <input type="text" name="control">
+<br>Flight Number: <input type="text" name="flight_number">
+<br>Flight Date: <input type="date" name="flight_date">
+<br>Airport name: <input type="text" name="airport_id">
+<br><input type="submit" value="Delete"></p>
+
+</form>
+
+<p><a href="/back_to_admin">Back to Admin menu: Click here</a></p>
+
+</body>
+
+
+</html>
+

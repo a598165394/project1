@@ -1,0 +1,48 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>All available flight info:</h1> 
+
+  <div>
+    {% for n in data %}
+    <div>Date: {{n[2]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Flight Number: {{n[1]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Airplane: {{n[0]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	From: {{n[5]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Departure at: {{n[3]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	To: {{n[6]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	Arrival at: {{n[4]}}&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+    {% endfor %}
+  </div>
+
+
+
+<form method="POST" action="/add_flights">
+<p>Add new flight info here:
+<br>Flight_number: <input type="text" name="flight_number">
+<br>Departure Date: <input type="date" name="dep_date">
+<br>Airplane Type: <input type="text" name="airplane">
+<br>Departure Airport: <input type="text" name="dep_airport">
+<br>Departure Time: in "HH:MM" format:  HH<input type="text" name="dep_hour"> MM<input type="text" name="dep_min">
+<br>Arrival Airport: <input type="text" name="arr_airport">
+<br>Arrival Time: in "HH:MM" format:  HH<input type="text" name="arr_hour"> MM<input type="text" name="arr_min">
+<br><input type="submit" value="Submit"></p>
+
+</form>
+
+
+<p><a href="/back_to_admin">Back to Admin menu: Click here</a></p>
+
+</body>
+
+
+</html>
+

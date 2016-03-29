@@ -8,22 +8,25 @@
 
 
 <body>
-  <h1>Some famous Computer Scientists</h1>
-  <div>{{data}}</div>
-
-  <div>
-    {% for n in data %}
-    <div>{{n}}</div>
-    {% endfor %}
-  </div>
-
-<p><a href="/another">Go to the other page</a></p>
-
-<form method="POST" action="/add">
-<p>Name of new computer scientist: <input type="text" name="name"> <input type="submit" value="Add"></p>
+  <h1>Website Application for Optimal Flight Selection (WAOFS)</h1>
+  <h2>Wenrui Huang (UNI:wh2353) and Hengming Dai (UNI:hd2337)</h2>
+  <form method="POST" action="/login">
+<p>User ID: <input type="int" name="user_id"> <input type="submit" value="Login"></p>
+<p><a href="/register">First time user? Register here</a></p>
+<p><a href="/comments">View Comments: Click here</a></p>
 </form>
+
+
+  <form method="POST" action="/admin">
+<p><br><br><br><br><br>Admin? Login Here: <br>Admin ID: <input type="int" name="admin_id"> <input type="submit" value="Login"></p>
+</form>
+
+
+
+
 
 </body>
 
 
 </html>
+

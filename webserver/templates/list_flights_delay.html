@@ -1,0 +1,42 @@
+<html>
+  <style>
+    body{ 
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>All flight delay info:</h1> 
+
+  <div>
+    {% for n in data %}
+    <div>
+    flight_number: {{n[2]}}&nbsp;&nbsp;&nbsp;&nbsp;
+    flight_date: {{n[3]}}&nbsp;&nbsp;&nbsp;&nbsp;<br>
+    Delay_time: {{n[0]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    cause: {{n[1]}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br>
+  
+  </div>
+    {% endfor %}
+  </div>
+
+
+
+<form method="POST" action="/add_flights_delay">
+<p>Add new flight delay info:
+<br>Delay_time: <input type="int" name="time_cost">
+<br>Cause: <input type="text" name="cause">
+<br>Flight_number: <input type="text" name="flight_number">
+<br>Flight_date: <input type="date" name="flight_date">
+<br><input type="submit" value="Submit"></p>
+</form>
+
+
+<p><a href="/back_to_admin">Back to Admin menu: Click here</a></p>
+
+</body>
+
+
+</html>
