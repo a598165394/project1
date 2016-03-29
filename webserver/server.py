@@ -408,7 +408,11 @@ def add_comment():
     q = "SELECT A.user_id, max(P.comment_id) FROM Account A LEFT OUTER JOIN Post_Comments P ON A.user_id = P.user_id WHERE A.user_id =%s GROUP BY A.user_id"
     cursor = g.conn.execute(q,(user_id))
     for ids_with_counts in cursor:
-        count = int(ids_with_counts[1])
+        if(ids_with_counts[1]==None):
+            print "line 579"
+            count =0
+        else:
+            count = int(ids_with_counts[1])
 #     print type(count)
         print "The count is %d\n" % count
         content = request.form['content']
